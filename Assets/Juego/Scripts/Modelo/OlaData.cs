@@ -4,10 +4,11 @@ using UnityEngine;
 [Serializable]
 public class OlaData
 {
-    [SerializeField]
     private TipoEnemigo tipo;
     [SerializeField]
     private int cantidad;
+    [SerializeField]
+    private GameObject prefab;
 
     public OlaData(TipoEnemigo tipo){
         Tipo = tipo;
@@ -18,6 +19,12 @@ public class OlaData
         Cantidad = cantidad;
     }
 
+    public OlaData(GameObject prefab,int cantidad){
+        Prefab = prefab;
+        Cantidad = cantidad;
+    }
+
     public TipoEnemigo Tipo { get => tipo; set => tipo = value; }
     public int Cantidad { get => cantidad; set => cantidad = value; }
+    public GameObject Prefab { get => prefab; set => prefab = value; }
 }

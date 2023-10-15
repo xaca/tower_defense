@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 7485601537633675857}
   - component: {fileID: 6530830608247329701}
   - component: {fileID: 1743609231000362067}
+  - component: {fileID: 5412493682498914478}
   m_Layer: 13
   m_Name: Ninja
   m_TagString: Player
@@ -175,7 +176,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -252,7 +253,7 @@ MonoBehaviour:
     m_Bits: 32768
   ObstaclesLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
 --- !u!114 &114184945564206620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,15 +463,15 @@ MonoBehaviour:
       - Decision: {fileID: 242806838659951371}
         TrueState: Respawn
         FalseState: 
+      - Decision: {fileID: 5412493682498914478}
+        TrueState: 
+        FalseState: Detenerse
   - StateName: Detenerse
     Actions:
       array:
       - {fileID: 6530830608247329701}
     Transitions:
-      array:
-      - Decision: {fileID: 0}
-        TrueState: 
-        FalseState: 
+      array: []
   - StateName: Respawn
     Actions:
       array:
@@ -505,11 +506,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: 
-  ChangeDirectionOnObstacle: 1
+  ChangeDirectionOnObstacle: 0
   ObstaclesLayerMask:
     serializedVersion: 2
-    m_Bits: 256
-  ObstaclesCheckFrequency: 1
+    m_Bits: 0
+  ObstaclesCheckFrequency: 0
 --- !u!114 &242806838659951371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,6 +572,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitializationMode: 1
+  Label: 
+--- !u!114 &5412493682498914478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561694053617324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922117e1e2222e14c9de3338af534a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   Label: 
 --- !u!1 &1671905898232590
 GameObject:

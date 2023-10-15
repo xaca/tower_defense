@@ -13,6 +13,7 @@ public enum TipoEnemigo{
 [Serializable]
 public class Enemigo
 {
+    [SerializeField]
     private GameObject obj;
     //[SerializeField]
     //private MMPath camino;

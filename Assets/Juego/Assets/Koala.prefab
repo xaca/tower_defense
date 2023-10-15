@@ -9814,17 +9814,18 @@ GameObject:
   - component: {fileID: 210286107803106362}
   - component: {fileID: 114923167933730068}
   - component: {fileID: 114873785417298432}
-  - component: {fileID: 114265374337090402}
   - component: {fileID: 114184457958384624}
+  - component: {fileID: -7392971012591918491}
   - component: {fileID: 114079283237680582}
   - component: {fileID: 114530058247276760}
   - component: {fileID: 114171358364461030}
   - component: {fileID: 5138030191358202673}
   - component: {fileID: 9157843362100592090}
   - component: {fileID: -311798770817676371}
-  - component: {fileID: 2688376550072279002}
   - component: {fileID: 8599364823280515402}
   - component: {fileID: 1201638390340438389}
+  - component: {fileID: -5224747654737181523}
+  - component: {fileID: -8937263884261673955}
   m_Layer: 10
   m_Name: Koala
   m_TagString: Player
@@ -9871,7 +9872,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -9964,41 +9965,6 @@ MonoBehaviour:
   AdditionalAbilityNodes: []
   CharacterBrain: {fileID: 0}
   OptimizeForMobile: 1
---- !u!114 &114265374337090402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498750440386690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af3b7ab2b51f5c2419cc72bff008ff0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  FacingMode: 3
-  FacingBase: 0
-  ModelShouldFlip: 0
-  ModelFlipValueLeft: {x: -1, y: 1, z: 1}
-  ModelFlipValueRight: {x: 1, y: 1, z: 1}
-  ModelShouldRotate: 1
-  ModelRotationValueLeft: {x: 0, y: 180, z: 0}
-  ModelRotationValueRight: {x: 0, y: 0, z: 0}
-  ModelRotationSpeed: 0
-  InitialFacingDirection: 1
-  AbsoluteThresholdMovement: 0.5
-  AbsoluteThresholdWeapon: 0.5
-  CurrentFacingDirection: 1
-  IsFacingRight: 1
 --- !u!114 &114184457958384624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10025,16 +9991,51 @@ MonoBehaviour:
   InputAuthorized: 1
   AnalogInput: 0
   ScriptDrivenInput: 0
-  WalkSpeed: 2
+  WalkSpeed: 1.5
   ShouldSetMovement: 1
   IdleThreshold: 0.05
-  Acceleration: 9.78
-  Deceleration: 100
+  Acceleration: 10
+  Deceleration: 10
   InterpolateMovementSpeed: 0
   WalkParticles:
   - {fileID: 198815970869915398}
   TouchTheGroundParticles: []
   TouchTheGroundSfx: []
+--- !u!114 &-7392971012591918491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498750440386690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3b7ab2b51f5c2419cc72bff008ff0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartSfx: {fileID: 0}
+  AbilityInProgressSfx: {fileID: 0}
+  AbilityStopSfx: {fileID: 0}
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  BlockingWeaponStates: 
+  FacingMode: 3
+  FacingBase: 0
+  ModelShouldFlip: 0
+  ModelFlipValueLeft: {x: -1, y: 1, z: 1}
+  ModelFlipValueRight: {x: 1, y: 1, z: 1}
+  ModelShouldRotate: 0
+  ModelRotationValueLeft: {x: 0, y: 180, z: 0}
+  ModelRotationValueRight: {x: 0, y: 0, z: 0}
+  ModelRotationSpeed: 0
+  InitialFacingDirection: 1
+  AbsoluteThresholdMovement: 0.5
+  AbsoluteThresholdWeapon: 0.5
+  CurrentFacingDirection: 1
+  IsFacingRight: 1
 --- !u!114 &114079283237680582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10057,7 +10058,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  RunSpeed: 10
+  RunSpeed: 16
   AutoRun: 0
   AutoRunThreshold: 0.6
 --- !u!114 &114530058247276760
@@ -10150,16 +10151,13 @@ MonoBehaviour:
       - Decision: {fileID: 8599364823280515402}
         TrueState: Respawn
         FalseState: 
+      - Decision: {fileID: 0}
+        TrueState: 
+        FalseState: 
   - StateName: Detenerse
     Actions:
       array:
       - {fileID: -311798770817676371}
-    Transitions:
-      array: []
-  - StateName: Respawn
-    Actions:
-      array:
-      - {fileID: 1201638390340438389}
     Transitions:
       array: []
   TimeInThisState: 0
@@ -10187,11 +10185,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: 
-  ChangeDirectionOnObstacle: 1
+  ChangeDirectionOnObstacle: 0
   ObstaclesLayerMask:
     serializedVersion: 2
-    m_Bits: 256
-  ObstaclesCheckFrequency: 1
+    m_Bits: 0
+  ObstaclesCheckFrequency: 0
 --- !u!114 &-311798770817676371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10206,27 +10204,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: 
---- !u!114 &2688376550072279002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498750440386690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e38c1b30926cd264b8cdd9ed9b9dc386, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CycleOption: 2
-  LoopInitialMovementDirection: 0
-  PathElements: []
-  ReferenceMMPath: {fileID: 0}
-  AbsoluteReferencePath: 1
-  MinDistanceToGoal: 0.1
-  LockHandlesOnXAxis: 0
-  LockHandlesOnYAxis: 0
-  LockHandlesOnZAxis: 0
 --- !u!114 &8599364823280515402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10254,8 +10231,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 1
   Label: 
-  enemigo: {fileID: 0}
-  inicio: {x: 0, y: 0, z: 0}
+--- !u!114 &-5224747654737181523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498750440386690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922117e1e2222e14c9de3338af534a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: 
+--- !u!114 &-8937263884261673955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498750440386690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38c1b30926cd264b8cdd9ed9b9dc386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CycleOption: 2
+  LoopInitialMovementDirection: 0
+  PathElements: []
+  ReferenceMMPath: {fileID: 0}
+  AbsoluteReferencePath: 1
+  MinDistanceToGoal: 0.1
+  LockHandlesOnXAxis: 0
+  LockHandlesOnYAxis: 0
+  LockHandlesOnZAxis: 0
 --- !u!1 &1561075265052736
 GameObject:
   m_ObjectHideFlags: 0

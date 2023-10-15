@@ -14,14 +14,16 @@ public class AIActionRespawnEnemigo : AIAction
     private AIActionPatrullarOla ai;
     
     public override void Initialization (){
-        enemigo = this.transform.parent.gameObject;
-        inicio = enemigo.transform.position;
-        ai = this.GetComponentInParent<AIActionPatrullarOla>();
+        //enemigo = this.transform.parent.gameObject;
+        if(enemigo!=null){
+            inicio = enemigo.transform.position;
+            ai = this.GetComponentInParent<AIActionPatrullarOla>();
+        }
     }
 
     public override void PerformAction()
 	{
-        VolverAlInicio();
+        //VolverAlInicio();
     }
 
     public void VolverAlInicio(){
