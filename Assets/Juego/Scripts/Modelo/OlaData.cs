@@ -7,7 +7,7 @@ using UnityEngine;
 public class OlaData
 {
     [SerializeField]
-    private float tiempo_partida;
+    private float tiempoSalida;
     private TipoEnemigo tipo;
     [SerializeField]
     private int cantidad;
@@ -34,4 +34,5 @@ public class OlaData
     public int Cantidad { get => cantidad; set => cantidad = value; }
     public GameObject Prefab { get => prefab; set => prefab = value; }
     public MMPath Ruta { get => ruta; set => ruta = value; }
+    public float TiempoSalida { get => tiempoSalida; set => tiempoSalida = value; }
 }

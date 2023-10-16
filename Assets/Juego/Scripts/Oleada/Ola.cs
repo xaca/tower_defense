@@ -30,6 +30,7 @@ public class Ola : MonoBehaviour
         {
             temp = grupos.AddComponent<OlaGrupo>();
             temp.CrearGrupo(d);
+            temp.Tiempo_salida = d.TiempoSalida;
         }
     }
 

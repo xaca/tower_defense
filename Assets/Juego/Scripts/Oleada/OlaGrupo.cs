@@ -5,22 +5,39 @@ using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum EstadosGrupo{
+    SIN_EMPEZAR,EJECUCION,TERMINADO
+}
+
 [Serializable]
 public class OlaGrupo : MonoBehaviour
 {
+    private EstadosGrupo estado;
     //private GameObject padre;
     private List<Enemigo> enemigos;
     private int enemigo_actual;
-    public const float TIEMPO_SALIDA_ENEMIGO = 10f;
+    //Tiempo de salida entre enemigos de un grupo
+    public const float TIEMPO_SALIDA_ENEMIGO = 3f;
+    private float tiempo_salida;
+
+    public float Tiempo_salida { get => tiempo_salida; set => tiempo_salida = value; }
 
     public void Start(){
         //Crear la ola, con la información de OlaData
+        estado = EstadosGrupo.SIN_EMPEZAR;
+    }
+
+    public void Update(){
+        if(Time.timeSinceLevelLoad > Tiempo_salida && estado == EstadosGrupo.SIN_EMPEZAR)
+        {
+            EmpezarGrupo();
+            estado = EstadosGrupo.EJECUCION;
+        }
     }
 
     public void CrearGrupo(OlaData data){
         enemigos = new List<Enemigo>();
         AgregarEnemigos(data);
-        EmpezarGrupo();
     }
 
     public void EmpezarGrupo(){
@@ -57,6 +74,7 @@ public class OlaGrupo : MonoBehaviour
                 //Fin de la ola
                 //Despachar evento fin de ola, para que la oleado controle la 
                 //siguiente ola
+                estado = EstadosGrupo.TERMINADO;
             }
         }        
     }
