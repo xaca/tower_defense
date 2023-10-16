@@ -6032,12 +6032,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-  - cantidad: 2
+  - tiempo_partida: 0
+    cantidad: 2
     prefab: {fileID: 1498750440386690, guid: d59a856dda35f714faf0f1e052666033, type: 3}
-    ruta: {fileID: 1675283314}
-  - cantidad: 3
-    prefab: {fileID: 1561694053617324, guid: 2a2a535b3c27a86439a7f760532fad45, type: 3}
     ruta: {fileID: 1509456631}
+  - tiempo_partida: 0
+    cantidad: 3
+    prefab: {fileID: 1561694053617324, guid: 2a2a535b3c27a86439a7f760532fad45, type: 3}
+    ruta: {fileID: 1675283314}
   PuedeAgregarButton: 0
 --- !u!4 &1002417115 stripped
 Transform:
@@ -9465,7 +9467,7 @@ GameObject:
   - component: {fileID: 1509456630}
   - component: {fileID: 1509456631}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Ruta 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10284,7 +10286,7 @@ GameObject:
   - component: {fileID: 1675283315}
   - component: {fileID: 1675283314}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Ruta 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

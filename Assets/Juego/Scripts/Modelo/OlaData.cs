@@ -6,6 +6,8 @@ using UnityEngine;
 [Serializable]
 public class OlaData
 {
+    [SerializeField]
+    private float tiempo_partida;
     private TipoEnemigo tipo;
     [SerializeField]
     private int cantidad;

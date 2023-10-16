@@ -461,9 +461,9 @@ MonoBehaviour:
     Transitions:
       array:
       - Decision: {fileID: 242806838659951371}
-        TrueState: Respawn
+        TrueState: Detenerse
         FalseState: 
-      - Decision: {fileID: 5412493682498914478}
+      - Decision: {fileID: 0}
         TrueState: 
         FalseState: Detenerse
   - StateName: Detenerse

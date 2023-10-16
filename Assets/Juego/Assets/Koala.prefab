@@ -10149,7 +10149,7 @@ MonoBehaviour:
     Transitions:
       array:
       - Decision: {fileID: 8599364823280515402}
-        TrueState: Respawn
+        TrueState: Detenerse
         FalseState: 
       - Decision: {fileID: 0}
         TrueState: 
@@ -10158,6 +10158,12 @@ MonoBehaviour:
     Actions:
       array:
       - {fileID: -311798770817676371}
+    Transitions:
+      array: []
+  - StateName: Respawn
+    Actions:
+      array:
+      - {fileID: 1201638390340438389}
     Transitions:
       array: []
   TimeInThisState: 0

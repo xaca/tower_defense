@@ -23,7 +23,7 @@ public class AIActionRespawnEnemigo : AIAction
 
     public override void PerformAction()
 	{
-        //VolverAlInicio();
+        VolverAlInicio();
     }
 
     public void VolverAlInicio(){
@@ -33,8 +33,8 @@ public class AIActionRespawnEnemigo : AIAction
         Character character = this.GetComponentInParent<Character>();
         character.RespawnAt(inicio,Character.FacingDirections.East);
         ai.Reiniciar();
-        character.Freeze();
-        gameObject.SetActive(false);
+        /*character.Freeze();
+        gameObject.SetActive(false);*/
                 
     }
 
