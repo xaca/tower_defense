@@ -18,7 +18,7 @@ public class Ola : MonoBehaviour
     public bool PuedeAgregarButton;
 
     public void Start(){
-        grupos = new GameObject();
+        grupos = new GameObject("Grupos");
         grupos.transform.SetParent(this.transform);
         CrearGrupos();
     }

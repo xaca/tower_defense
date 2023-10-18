@@ -5,12 +5,11 @@ using UnityEngine;
 
 public class Ruta : MMPath
 {
-
-    public void Start(){
-        /*foreach(MMPathMovementElement e in PathElements){
-            Debug.Log(e.PathElementPosition.x+","+e.PathElementPosition.y);
-        }*/
-    }
+    /*public void Start(){
+        //foreach(MMPathMovementElement e in PathElements){
+        //    Debug.Log(e.PathElementPosition.x+","+e.PathElementPosition.y);
+        //}
+    }*/
 
     //Para que esta clase funcione, la ruta debe tener cycle option only once
     public bool FinRuta(){

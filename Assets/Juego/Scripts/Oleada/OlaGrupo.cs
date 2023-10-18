@@ -14,10 +14,11 @@ public class OlaGrupo : MonoBehaviour
 {
     private EstadosGrupo estado;
     //private GameObject padre;
+    [SerializeField]
     private List<Enemigo> enemigos;
     private int enemigo_actual;
     //Tiempo de salida entre enemigos de un grupo
-    public const float TIEMPO_SALIDA_ENEMIGO = 3f;
+    public const float TIEMPO_SALIDA_ENEMIGO = 1f;
     private float tiempo_salida;
 
     public float Tiempo_salida { get => tiempo_salida; set => tiempo_salida = value; }
@@ -118,7 +119,7 @@ public class OlaGrupo : MonoBehaviour
         if(temp!=null)
         {
             temp.ReferenceMMPath = ruta;
-            temp.Initialization();
+            //temp.Initialization();
         }
         
     }
