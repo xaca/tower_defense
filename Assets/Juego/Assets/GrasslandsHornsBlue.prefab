@@ -16034,8 +16034,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterDimension: 0
-  CharacterType: 0
-  PlayerID: Player2
+  CharacterType: 1
+  PlayerID: 
   CharacterAnimator: {fileID: 6311937573062394491}
   UseDefaultMecanim: 1
   RunAnimatorSanityChecks: 0
@@ -16107,7 +16107,7 @@ MonoBehaviour:
   InputAuthorized: 1
   AnalogInput: 0
   ScriptDrivenInput: 0
-  WalkSpeed: 3
+  WalkSpeed: 5
   ShouldSetMovement: 1
   IdleThreshold: 0.05
   Acceleration: 10

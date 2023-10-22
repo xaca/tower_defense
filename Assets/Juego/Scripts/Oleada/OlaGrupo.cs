@@ -6,12 +6,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum EstadosGrupo{
-    SIN_EMPEZAR,EJECUCION,TERMINADO
+    EN_COLA,SIN_EMPEZAR,EJECUCION,TERMINADO
 }
 
 [Serializable]
 public class OlaGrupo : MonoBehaviour
 {
+    private Ola ola_actual;
     private EstadosGrupo estado;
     //private GameObject padre;
     [SerializeField]
@@ -22,17 +23,25 @@ public class OlaGrupo : MonoBehaviour
     private float tiempo_salida;
 
     public float Tiempo_salida { get => tiempo_salida; set => tiempo_salida = value; }
+    public Ola OlaActual { get => ola_actual; set => ola_actual = value; }
 
     public void Start(){
+        Debug.Log(estado);
+    }
+
+    public void IniciarGrupo(){
         //Crear la ola, con la información de OlaData
         estado = EstadosGrupo.SIN_EMPEZAR;
     }
 
     public void Update(){
-        if(Time.timeSinceLevelLoad > Tiempo_salida && estado == EstadosGrupo.SIN_EMPEZAR)
+        if(estado != EstadosGrupo.EN_COLA)
         {
-            EmpezarGrupo();
-            estado = EstadosGrupo.EJECUCION;
+            if(Time.timeSinceLevelLoad > Tiempo_salida && estado == EstadosGrupo.SIN_EMPEZAR)
+            {
+                EmpezarGrupo();
+                estado = EstadosGrupo.EJECUCION;
+            }
         }
     }
 
@@ -47,7 +56,6 @@ public class OlaGrupo : MonoBehaviour
 
     private IEnumerator DespacharEnemigo(float tiempo)
     {
-        Debug.Log("Despachar");
         yield return new WaitForSecondsRealtime(tiempo);
         ActivarEnemigo();
     }
@@ -76,6 +84,9 @@ public class OlaGrupo : MonoBehaviour
                 //Despachar evento fin de ola, para que la oleado controle la 
                 //siguiente ola
                 estado = EstadosGrupo.TERMINADO;
+                ola_actual.DespacharGrupo();
+                //Acá se indica que todos los enemigos de un grupo fueron
+                //despachados, se debe tener un contador en la ola
             }
         }        
     }
@@ -119,7 +130,7 @@ public class OlaGrupo : MonoBehaviour
         if(temp!=null)
         {
             temp.ReferenceMMPath = ruta;
-            //temp.Initialization();
+            //temp.Initialization();//No es necesario inicializar una ruta asignada
         }
         
     }

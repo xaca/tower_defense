@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Tools;
+using MoreMountains.TopDownEngine;
 using UnityEngine;
 
 public class AIDecisionFinPatrulla : AIDecision
@@ -14,6 +15,10 @@ public class AIDecisionFinPatrulla : AIDecision
         }
     }
     public override bool Decide(){
+        if(ruta.FinRuta())
+        {
+            GameManager.Instance.LoseLife();
+        }
         return ruta.FinRuta();
     }
 }

@@ -462,13 +462,13 @@ MonoBehaviour:
       - {fileID: 6137852379787212272}
     Transitions:
       array:
-      - Decision: {fileID: 0}
-        TrueState: PerderVidas
+      - Decision: {fileID: 242806838659951371}
+        TrueState: Detenerse
         FalseState: 
   - StateName: Detenerse
     Actions:
       array:
-      - {fileID: 0}
+      - {fileID: 6530830608247329701}
     Transitions:
       array: []
   - StateName: PerderVidas
