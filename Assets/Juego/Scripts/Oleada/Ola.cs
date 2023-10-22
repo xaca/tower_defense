@@ -12,13 +12,17 @@ public class Ola : MonoBehaviour
     private List<OlaGrupo> ola_grupos;
     private GameObject grupos;
     private int grupo_actual;
+    private float tiempo_total_ola;
+    [SerializeField]
+    private float tiempo_entre_olas;
+    private bool ola_despachada;
     [SerializeField]
     //Esta es la ruta que seguiran todos los enemigos de la ola
     [Header("Debug")]
     [MMInspectorButton("AgregarUnEnemigo")]
     /// a test button to spawn an object
     public bool PuedeAgregarButton;
-
+    
     public Oleadas OleadasNivel { get => oleadas_nivel; set => oleadas_nivel = value; }
 
 
@@ -45,9 +49,10 @@ public class Ola : MonoBehaviour
             temp.CrearGrupo(d);
             temp.OlaActual = this;
             temp.Tiempo_salida = d.TiempoSalida;
+            tiempo_total_ola += d.TiempoSalida;
             ola_grupos.Add(temp);
         }
-         
+        Debug.Log("Tiempo total de la ola "+tiempo_total_ola); 
     }
 
     public void EmpezarOla(){
@@ -65,7 +70,16 @@ public class Ola : MonoBehaviour
         else{
             //Se despacharon todos los grupos de la ola,
             //Se pide la siguiente ola
+            ola_despachada = true;
+        }
+    }
+
+    public void Update(){
+        //El tiempo entre olas indica el tiempo que se debe esperar para que salga la siguiente ola
+        if(Time.timeSinceLevelLoad>(tiempo_total_ola+tiempo_entre_olas) && ola_despachada)
+        {
             OleadasNivel.DespacharOla();
+            ola_despachada = false;//Pendiente gestionar ejecución de este script
         }
     }
 
