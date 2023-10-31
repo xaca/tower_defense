@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4246027342705354}
   - component: {fileID: 198815970869915398}
   - component: {fileID: 199417063065338264}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Footsteps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4834,7 +4834,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4315474336313948}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: SecondaryWeaponAttachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4867,7 +4867,7 @@ GameObject:
   - component: {fileID: 4822752530308628}
   - component: {fileID: 198002379943107208}
   - component: {fileID: 199630857930723226}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: DashParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9702,7 +9702,7 @@ GameObject:
   - component: {fileID: 4330552656303096}
   - component: {fileID: 212479530728563738}
   - component: {fileID: 95179347267985190}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: KoalaModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9826,7 +9826,7 @@ GameObject:
   - component: {fileID: 1201638390340438389}
   - component: {fileID: -5224747654737181523}
   - component: {fileID: -8937263884261673955}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Koala
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -10291,7 +10291,7 @@ GameObject:
   - component: {fileID: 4105561756980196}
   - component: {fileID: 198535122659631738}
   - component: {fileID: 199924805280406376}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: DustCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15246,7 +15246,7 @@ GameObject:
   - component: {fileID: 4375450038814108}
   - component: {fileID: 23005929734181116}
   - component: {fileID: 33599144827507420}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: ConeOfVision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15327,7 +15327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4515663194721164}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: WeaponAttachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15359,7 +15359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1412856920691769247}
   - component: {fileID: 1898030370951007889}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: JumpStartFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15718,7 +15718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5797006686581982211}
   - component: {fileID: 5986297841957823375}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: DashMMFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16234,7 +16234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7375390012173718480}
   - component: {fileID: 5423255612875023378}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: DamageFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16999,7 +16999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 210470828788380443}
   - component: {fileID: 4241640356283784650}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: FallingFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17461,7 +17461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8773258298053573596}
   - component: {fileID: 4206741978730624185}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: DeathFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
