@@ -5,10 +5,9 @@ using MoreMountains.TopDownEngine;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ControlVidas:MonoBehaviour
+public class TowerDefenseManager:MonoBehaviour
 {
-    public void OnQuitarVida(){
-        GameManager.Instance.LoseLife();
-    }
+    
+    
 
 }

@@ -132,9 +132,6 @@ GameObject:
   - component: {fileID: 7485601537633675857}
   - component: {fileID: 6530830608247329701}
   - component: {fileID: 1743609231000362067}
-  - component: {fileID: 5412493682498914478}
-  - component: {fileID: -6060493988888146682}
-  - component: {fileID: -7514457262619058907}
   m_Layer: 13
   m_Name: Ninja
   m_TagString: Player
@@ -463,30 +460,15 @@ MonoBehaviour:
     Transitions:
       array:
       - Decision: {fileID: 242806838659951371}
-        TrueState: Detenerse
-        FalseState: 
-  - StateName: Detenerse
-    Actions:
-      array:
-      - {fileID: 6530830608247329701}
-    Transitions:
-      array: []
-  - StateName: PerderVidas
-    Actions:
-      array:
-      - {fileID: 0}
-    Transitions:
-      array:
-      - Decision: {fileID: 0}
         TrueState: Respawn
         FalseState: 
   - StateName: Respawn
     Actions:
       array:
-      - {fileID: 0}
+      - {fileID: 1743609231000362067}
     Transitions:
       array:
-      - Decision: {fileID: 0}
+      - Decision: {fileID: 242806838659951371}
         TrueState: 
         FalseState: Moverse
   TimeInThisState: 0
@@ -581,47 +563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 1
   Label: 
---- !u!114 &5412493682498914478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561694053617324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 922117e1e2222e14c9de3338af534a23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Label: 
---- !u!114 &-6060493988888146682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561694053617324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9539c9dc77cc1840ab62fce2977ab2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationMode: 0
-  Label: 
-  vidasADescontar: 1
---- !u!114 &-7514457262619058907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561694053617324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c9111f9e80baff4b893d2df2291c99b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Label: 
+  enemigo: {fileID: 0}
 --- !u!1 &1671905898232590
 GameObject:
   m_ObjectHideFlags: 0

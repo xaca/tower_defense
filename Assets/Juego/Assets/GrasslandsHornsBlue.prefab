@@ -15888,12 +15888,10 @@ GameObject:
   - component: {fileID: 6311937572946013166}
   - component: {fileID: 7700052840779658931}
   - component: {fileID: -4270486782831739765}
-  - component: {fileID: -2233812429227087080}
   - component: {fileID: 7039870045577713550}
   - component: {fileID: -3211044398776491499}
   - component: {fileID: 3688262345146281354}
   - component: {fileID: -8734113044399155227}
-  - component: {fileID: -759522204018877701}
   m_Layer: 13
   m_Name: GrasslandsHornsBlue
   m_TagString: Player
@@ -16104,11 +16102,11 @@ MonoBehaviour:
   InputAuthorized: 1
   AnalogInput: 0
   ScriptDrivenInput: 0
-  WalkSpeed: 2
+  WalkSpeed: 1
   ShouldSetMovement: 1
   IdleThreshold: 0.05
-  Acceleration: 10
-  Deceleration: 10
+  Acceleration: 5
+  Deceleration: 5
   InterpolateMovementSpeed: 0
   WalkParticles:
   - {fileID: 6311937573599516252}
@@ -16235,23 +16233,8 @@ MonoBehaviour:
       - {fileID: -3211044398776491499}
     Transitions:
       array:
-      - Decision: {fileID: 0}
-        TrueState: 
-        FalseState: 
-  - StateName: Detenerse
-    Actions:
-      array:
-      - {fileID: -8734113044399155227}
-    Transitions:
-      array: []
-  - StateName: PerderVidas
-    Actions:
-      array:
-      - {fileID: -759522204018877701}
-    Transitions:
-      array:
-      - Decision: {fileID: 0}
-        TrueState: 
+      - Decision: {fileID: 7039870045577713550}
+        TrueState: Respawn
         FalseState: 
   - StateName: Respawn
     Actions:
@@ -16259,9 +16242,9 @@ MonoBehaviour:
       - {fileID: 3688262345146281354}
     Transitions:
       array:
-      - Decision: {fileID: 0}
+      - Decision: {fileID: 7039870045577713550}
         TrueState: 
-        FalseState: 
+        FalseState: Moverse
   TimeInThisState: 0
   Target: {fileID: 0}
   _lastKnownTargetPosition: {x: 0, y: 0, z: 0}
@@ -16294,19 +16277,6 @@ MonoBehaviour:
   LockHandlesOnXAxis: 0
   LockHandlesOnYAxis: 0
   LockHandlesOnZAxis: 0
---- !u!114 &-2233812429227087080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6311937572946013165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c9111f9e80baff4b893d2df2291c99b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Label: 
 --- !u!114 &7039870045577713550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16353,6 +16323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: 
+  enemigo: {fileID: 0}
 --- !u!114 &-8734113044399155227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16367,21 +16338,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: 
---- !u!114 &-759522204018877701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6311937572946013165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9539c9dc77cc1840ab62fce2977ab2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationMode: 0
-  Label: 
-  vidasADescontar: 0
 --- !u!1 &6311937572966241791
 GameObject:
   m_ObjectHideFlags: 0
