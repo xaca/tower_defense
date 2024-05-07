@@ -8,11 +8,11 @@ public class OlaData
 {
     [SerializeField]
     private float tiempoSalida;
+    [SerializeField]
     private TipoEnemigo tipo;
     [SerializeField]
     private int cantidad;
-    [SerializeField]
-    private GameObject prefab;
+    private GameObject prefab;//Prefab del enemigo, se reemplaza por el tipo para facilitar el pooling
     [SerializeField]
     private MMPath ruta;
 

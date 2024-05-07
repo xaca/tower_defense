@@ -14,7 +14,7 @@ public class AIActionRespawnEnemigo : AIAction
     private MMPath path;
     
     public override void Initialization (){
-        //enemigo = this.transform.parent.gameObject;
+        enemigo = this.transform.parent.gameObject;
         //if(enemigo!=null){
             //inicio = enemigo.transform.position;
             path = GetComponent<MMPath>();
@@ -37,7 +37,7 @@ public class AIActionRespawnEnemigo : AIAction
         path.Initialization();
         MMEventManager.TriggerEvent(new MMGameEvent(EnemigoEstados.RESPANW));
         /*character.Freeze();*/
-        /*gameObject.SetActive(false);*/
+        enemigo.SetActive(false);
                 
     }
 

@@ -1924,7 +1924,7 @@ MonoBehaviour:
   BlockingWeaponStates: 
   InitialWeapon: {fileID: 114277323309942634, guid: bf642fb1b25ab1b47bfae9066eb4db46,
     type: 3}
-  CanPickupWeapons: 1
+  CanPickupWeapons: 0
   WeaponUseFeedback: {fileID: 0}
   WeaponAttachment: {fileID: 0}
   ProjectileSpawn: {fileID: 1817469195}
@@ -6947,17 +6947,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
   - tiempoSalida: 0
+    tipo: 0
     cantidad: 2
-    prefab: {fileID: 1498750440386690, guid: d59a856dda35f714faf0f1e052666033, type: 3}
     ruta: {fileID: 1509456631}
   - tiempoSalida: 10
+    tipo: 1
     cantidad: 3
-    prefab: {fileID: 1561694053617324, guid: 2a2a535b3c27a86439a7f760532fad45, type: 3}
     ruta: {fileID: 1675283314}
   - tiempoSalida: 25
+    tipo: 2
     cantidad: 8
-    prefab: {fileID: 6311937572946013165, guid: ec4bf1d61dc1a2246bf027cb9fb8c481,
-      type: 3}
     ruta: {fileID: 1509456631}
   tiempo_entre_olas: 20
   PuedeAgregarButton: 0
@@ -7432,7 +7431,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -908, y: 453}
+  m_AnchoredPosition: {x: -553, y: 453}
   m_SizeDelta: {x: 72, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1086730504
@@ -10976,13 +10975,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
   - tiempoSalida: 0
+    tipo: 0
     cantidad: 5
-    prefab: {fileID: 6311937572946013165, guid: ec4bf1d61dc1a2246bf027cb9fb8c481,
-      type: 3}
     ruta: {fileID: 1675283314}
   - tiempoSalida: 15
+    tipo: 1
     cantidad: 3
-    prefab: {fileID: 1561694053617324, guid: 2a2a535b3c27a86439a7f760532fad45, type: 3}
     ruta: {fileID: 1509456631}
   tiempo_entre_olas: 20
   PuedeAgregarButton: 0
@@ -11032,12 +11030,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
   - tiempoSalida: 0
+    tipo: 0
     cantidad: 3
-    prefab: {fileID: 1498750440386690, guid: d59a856dda35f714faf0f1e052666033, type: 3}
     ruta: {fileID: 1675283314}
   - tiempoSalida: 15
+    tipo: 2
     cantidad: 12
-    prefab: {fileID: 1561694053617324, guid: 2a2a535b3c27a86439a7f760532fad45, type: 3}
     ruta: {fileID: 1509456631}
   tiempo_entre_olas: 0
   PuedeAgregarButton: 0
