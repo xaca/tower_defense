@@ -16,11 +16,15 @@ public class AIActionPatrullarOla : AIActionMovePatrol2D
     protected override void Patrol(){
         try{
             //Lanza excepción si el MMPath no se ha asignado
-            base.Patrol();
-            
+            if(_mmPath!=null){
+                base.Patrol(); 
+            }
+            else{
+                //Debug.Log("No hay ruta asignada");
+            }
         }catch(NullReferenceException e){
-            Debug.Log("La ruta MMPath no se ha asignado");
-            Debug.LogError(e);
+            //Debug.Log("La ruta MMPath no se ha asignado");
+            //Debug.LogError(e);
         }
     }
 }

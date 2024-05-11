@@ -35,7 +35,7 @@ public class AIActionRespawnEnemigo : AIAction
         //Character character = this.GetComponentInParent<Character>();
         //character.RespawnAt(inicio,Character.FacingDirections.East);
         path.Initialization();
-        MMEventManager.TriggerEvent(new MMGameEvent(EnemigoEstados.RESPANW));
+        //MMEventManager.TriggerEvent(new MMGameEvent(EnemigoEstados.RESPANW));
         /*character.Freeze();*/
         enemigo.SetActive(false);
                 

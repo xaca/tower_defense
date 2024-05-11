@@ -20,11 +20,11 @@ public class Revivir : MonoBehaviour, MMEventListener<MMGameEvent>
     public void OnMMEvent(MMGameEvent e)
     {
         
-        if(e.EventName == EnemigoEstados.MUERTO)
+        /*if(e.EventName == EnemigoEstados.MUERTO)
         {
             Debug.Log("El personaje murio, se va a revivir");
             StartCoroutine(RevivirPersonaje());
-        }
+        }*/
     }
 
     IEnumerator RevivirPersonaje(){

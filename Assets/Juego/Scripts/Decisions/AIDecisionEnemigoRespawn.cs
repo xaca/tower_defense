@@ -14,10 +14,10 @@ public class AIDecisionEnemigoRespawn : AIDecision, MMEventListener<MMGameEvent>
 
     public virtual void OnMMEvent(MMGameEvent e)
     {
-        if(e.EventName == EnemigoEstados.RESPANW)
+        /*if(e.EventName == EnemigoEstados.RESPANW)
         {
             enemigo_respawned = true;
-        }
+        }*/
     }
 
     void OnEnable()

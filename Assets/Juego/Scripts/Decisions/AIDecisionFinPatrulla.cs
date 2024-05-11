@@ -18,7 +18,7 @@ public class AIDecisionFinPatrulla : AIDecision
         if(ruta.FinRuta())
         {
             Debug.Log("Fin de la ruta");
-            MMGameEvent.Trigger(EnemigoEstados.FIN_RUTA);
+            //MMGameEvent.Trigger(EnemigoEstados.FIN_RUTA);
             //GameManager.Instance.LoseLife();
         }
         return ruta.FinRuta();
