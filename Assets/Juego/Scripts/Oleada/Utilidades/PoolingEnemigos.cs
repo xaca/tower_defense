@@ -74,7 +74,6 @@ public class PoolingEnemigos : MonoBehaviour,IOLaDataEvent,IEnemigoEvent
             go.transform.localScale = new Vector3(3f,3f,1);
             //Temporal, se debe crear con una ruta para probar, pero esta
             //gestion no corresponde al pooling
-            go.GetComponent<AIBrain>().BrainActive = false;
             return go;
         }
         return null;
@@ -128,8 +127,8 @@ public class PoolingEnemigos : MonoBehaviour,IOLaDataEvent,IEnemigoEvent
         GameObject enemigo = ObtenerEnemigo(enemigo_data);
         
         enemigo.SetActive(true);
-        enemigo.GetComponent<Ruta>().ReferenceMMPath = enemigo_data.Ruta;
         enemigo.transform.localPosition = Vector3.zero;
+        enemigo.GetComponent<Ruta>().ReferenceMMPath = enemigo_data.Ruta;
         Debug.Log("Recibiendo datos de la ola");
     }
 }
