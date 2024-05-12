@@ -14,26 +14,20 @@ public class Ola : MonoBehaviour
     private List<OlaData> datos;
     //Datos de un subgrupo de enemigos de la ola
     private List<EnemigoData> enemigos;
+    [Tooltip("Indica el grupo actual de la ola")]
+    private int grupo_actual;
+    private int contador_enemigos;
+    [Header("Control Tiempo")]
+    [Tooltip("Importante para que todos los enemigos no salgan al tiempo")]
+    [SerializeField]
+    private int tiempo_despacho;
     private float tiempo_total_ola;
     [Tooltip("Tiempo de espera entre olas")]
     [SerializeField]
     private float tiempo_entre_olas;
-    [SerializeField]
-    //Esta es la ruta que seguiran todos los enemigos de la ola
-    [Header("Debug")]
-    [MMInspectorButton("AgregarUnEnemigo")]
-    /// a test button to spawn an object
-    public bool PuedeAgregarButton;
-    [Tooltip("Indica el grupo actual de la ola")]
-    private int grupo_actual;
-    private int contador_enemigos;
-    [Tooltip("Importante para que todos los enemigos no salgan al tiempo")]
-    [SerializeField]
-    private int tiempo_despacho;
-
-    public void Start(){
-        tiempo_entre_olas = 5;
-        tiempo_despacho = 2;
+    public void EmpezarOla(){
+        tiempo_entre_olas = tiempo_entre_olas>0?tiempo_entre_olas:5;
+        tiempo_despacho = tiempo_despacho>0?tiempo_despacho:2;
         CalcularTiempoTotal();
         DespacharOla();
     }
@@ -46,7 +40,6 @@ public class Ola : MonoBehaviour
         tiempo_total_ola = tiempo;
     }
     public void CrearEnemigos(OlaData datos_grupo){
-        
         EnemigoData temp;
         enemigos = null;
         enemigos = new List<EnemigoData>();
@@ -55,7 +48,6 @@ public class Ola : MonoBehaviour
             temp = new EnemigoData(datos_grupo.Tipo,datos_grupo.Ruta);
             enemigos.Add(temp);
         }
-        
         contador_enemigos = 0;
     }
 
@@ -89,12 +81,8 @@ public class Ola : MonoBehaviour
         else{
             //Se despacharon todos los grupos de la ola,
             //Se pide la siguiente ola
-            if(Time.timeSinceLevelLoad>(tiempo_total_ola+tiempo_entre_olas)){
-                ManejadorEventos.TriggerEvent(EventosOla.OLA_TERMINADA,null);
-            }
-            else{
-                DespacharOla();
-            }
+            //if(Time.timeSinceLevelLoad>(tiempo_total_ola+tiempo_entre_olas)){}
+            ManejadorEventos.TriggerEvent(EventosOla.OLA_TERMINADA,null);
         }
     }
 
@@ -106,18 +94,5 @@ public class Ola : MonoBehaviour
         ManejadorEventos.TriggerEvent(EventosOla.DESPACHAR_ENEMIGO,data);
         DespacharEnemigos();//Se pide el siguiente enemigo
     }
-    //Metodo de prueba desde el inspector que agrega Koalas
-    public void AgregarUnEnemigo(){
-        //AgregarEnemigo(new OlaData(TipoEnemigo.Koala));
-    }
-
-    
-
-    /*public void OnMMEvent(MMGameEvent e)
-    {
-        if(e.EventName == EventosGrupo.SIGUIENTE_GRUPO.ToString())
-        {
-           
-        }
-    }*/
+        
 }

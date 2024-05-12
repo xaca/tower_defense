@@ -8,11 +8,12 @@ public class PoolingEnemigos : MonoBehaviour,IOLaDataEvent,IEnemigoEvent
 {
     public static PoolingEnemigos Instance { get; private set; }
     [SerializeField]
-    private List<OlaData> prueba;
+    private List<OlaData> datos_inicio;
     private int indice;//Se usa para ubicar las copias de los enemigos
     [Tooltip("Espacio entre enemigos")]
     [SerializeField]
     private int espacio;
+    [Tooltip("Contenedor del pooling de enemigos")]
     [SerializeField]
     private GameObject grupo;
     [MMFInspectorButton("ActivarEnemigo")]
@@ -32,7 +33,7 @@ public class PoolingEnemigos : MonoBehaviour,IOLaDataEvent,IEnemigoEvent
 
     public void Start(){
         espacio = 10;
-        foreach(OlaData e in prueba)
+        foreach(OlaData e in datos_inicio)
         {
             AgregarEnemigos(e);
         }
