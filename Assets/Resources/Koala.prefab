@@ -9821,11 +9821,9 @@ GameObject:
   - component: {fileID: 114171358364461030}
   - component: {fileID: 5138030191358202673}
   - component: {fileID: 9157843362100592090}
-  - component: {fileID: -311798770817676371}
-  - component: {fileID: 8599364823280515402}
-  - component: {fileID: 1201638390340438389}
   - component: {fileID: -8937263884261673955}
-  - component: {fileID: 1706151348060744590}
+  - component: {fileID: 2914089244751141027}
+  - component: {fileID: 1852504271534029764}
   m_Layer: 13
   m_Name: Koala
   m_TagString: Player
@@ -9978,8 +9976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 8300000, guid: 655425dccf77546449f89eb978aeabd1,
-    type: 3}
+  AbilityInProgressSfx: {fileID: 0}
   AbilityStopSfx: {fileID: 0}
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
@@ -10148,18 +10145,18 @@ MonoBehaviour:
       - {fileID: 9157843362100592090}
     Transitions:
       array:
-      - Decision: {fileID: 8599364823280515402}
-        TrueState: Respawn
+      - Decision: {fileID: 2914089244751141027}
+        TrueState: Detenerse
         FalseState: 
-  - StateName: Respawn
+  - StateName: Detenerse
     Actions:
       array:
-      - {fileID: 1201638390340438389}
+      - {fileID: 9157843362100592090}
     Transitions:
       array:
-      - Decision: {fileID: 8599364823280515402}
+      - Decision: {fileID: 0}
         TrueState: 
-        FalseState: Moverse
+        FalseState: 
   TimeInThisState: 0
   Target: {fileID: 0}
   _lastKnownTargetPosition: {x: 0, y: 0, z: 0}
@@ -10190,47 +10187,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   ObstaclesCheckFrequency: 0
---- !u!114 &-311798770817676371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498750440386690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 561ab803e1e9aa94ab096724696e5475, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationMode: 0
-  Label: 
---- !u!114 &8599364823280515402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498750440386690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a39b8d0f53eea1a488b048766d7afbf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Label: 
---- !u!114 &1201638390340438389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498750440386690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17c39ffec6dea164a99566587a3b9022, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationMode: 1
-  Label: 
 --- !u!114 &-8937263884261673955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10252,7 +10208,7 @@ MonoBehaviour:
   LockHandlesOnXAxis: 0
   LockHandlesOnYAxis: 0
   LockHandlesOnZAxis: 0
---- !u!114 &1706151348060744590
+--- !u!114 &2914089244751141027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10261,9 +10217,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1498750440386690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd2621bc2033f354b9fd2a2ed48000fc, type: 3}
+  m_Script: {fileID: 11500000, guid: a39b8d0f53eea1a488b048766d7afbf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Label: 
+--- !u!114 &1852504271534029764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498750440386690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561ab803e1e9aa94ab096724696e5475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
   Label: 
 --- !u!1 &1561075265052736
 GameObject:

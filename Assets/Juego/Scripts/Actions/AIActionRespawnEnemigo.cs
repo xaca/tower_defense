@@ -18,7 +18,6 @@ public class AIActionRespawnEnemigo : AIAction
         //if(enemigo!=null){
             //inicio = enemigo.transform.position;
             path = GetComponent<MMPath>();
-            Debug.Log("Path: "+path.PathElements.Count);
             //inicio = path.PathElements[0].PathElementPosition;
         //}
     }

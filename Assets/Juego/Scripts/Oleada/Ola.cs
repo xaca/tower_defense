@@ -33,7 +33,7 @@ public class Ola : MonoBehaviour
 
     public void Start(){
         tiempo_entre_olas = 5;
-        tiempo_despacho = 1;
+        tiempo_despacho = 2;
         CalcularTiempoTotal();
         DespacharOla();
     }
@@ -71,18 +71,20 @@ public class Ola : MonoBehaviour
             DespacharOla();
         }
     }
+    IEnumerator EsperarTiempoSalida(float tiempo,OlaData data){
+        yield return new WaitForSeconds(tiempo);
+        CrearEnemigos(data);
+        DespacharEnemigos();
+    }
     public void DespacharOla(){
-        //Debug.Log("Despachar grupo");
-        //Debug.Log(grupo_actual+" "+datos.Count);
-        OlaData data = datos[grupo_actual];
+        Debug.Log("Despachar grupo");
+        Debug.Log(grupo_actual+" "+datos.Count);
+        OlaData data;
 
         if(grupo_actual<datos.Count)
         {
-           //Se pide al pooling que despache los enemigos de la ola actual
-           //Se hace desde la hola, disparando un evento que el pooling escucha
-           //y se hace con una coroutina
-           CrearEnemigos(data);
-           DespacharEnemigos();
+            data = datos[grupo_actual];
+            StartCoroutine(EsperarTiempoSalida(data.TiempoSalida,data));
         }
         else{
             //Se despacharon todos los grupos de la ola,
@@ -96,9 +98,11 @@ public class Ola : MonoBehaviour
         }
     }
 
+    /*Se pide al pooling que despache los enemigos de la ola actual
+      Se hace desde la hola, disparando un evento que el pooling escucha
+      y se hace con una coroutina*/
     IEnumerator DespacharEnemigo(EnemigoData data){
-        OlaData ola_data = datos[grupo_actual];
-        yield return new WaitForSeconds(ola_data.TiempoSalida+tiempo_despacho);
+        yield return new WaitForSeconds(tiempo_despacho);
         ManejadorEventos.TriggerEvent(EventosOla.DESPACHAR_ENEMIGO,data);
         DespacharEnemigos();//Se pide el siguiente enemigo
     }

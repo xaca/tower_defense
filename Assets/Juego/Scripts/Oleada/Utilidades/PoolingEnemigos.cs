@@ -4,7 +4,7 @@ using UnityEngine;
 using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
 using UnityEngine.SceneManagement;
-public class PoolingEnemigos : MonoBehaviour,IOLaDataEvent
+public class PoolingEnemigos : MonoBehaviour,IOLaDataEvent,IEnemigoEvent
 {
     public static PoolingEnemigos Instance { get; private set; }
     [SerializeField]
@@ -89,7 +89,7 @@ public class PoolingEnemigos : MonoBehaviour,IOLaDataEvent
             //Se agrega el (Clone) para que coincida con el nombre del prefab duplicado
             tipo = child.gameObject.name;
             activo = child.gameObject.activeInHierarchy;
-            
+
             if (!activo && tipo.Equals(data.Tipo.ToString()+"(Clone)"))
             {
                 return child.gameObject;
@@ -102,10 +102,22 @@ public class PoolingEnemigos : MonoBehaviour,IOLaDataEvent
     public void OnEnable()
     {
         ManejadorEventos.AddEventListener(OnOlaData);
+        ManejadorEventos.AddEventListener(OnEnemigoAction);
     }
     public void OnDisable()
     {
         ManejadorEventos.RemoveEventListener(OnOlaData);
+        ManejadorEventos.RemoveEventListener(OnEnemigoAction);
+    }
+
+    public void OnEnemigoAction(GameObject go)
+    {
+        //Se recibe el evento de fin de ruta
+        //Se desactiva el enemigo
+        go.transform.localPosition = Vector3.zero;
+        go.GetComponent<Ruta>().Initialization();
+        go.SetActive(false);
+        Debug.Log("Fin de ruta");
     }
 
     public void OnOlaData(EnemigoData enemigo_data)
@@ -113,9 +125,10 @@ public class PoolingEnemigos : MonoBehaviour,IOLaDataEvent
         //Se recibe la información de la ola
         //Se guarda en la lista de datos
         GameObject enemigo = ObtenerEnemigo(enemigo_data);
-        enemigo.GetComponent<AIBrain>().BrainActive = true;
+        
         enemigo.SetActive(true);
         enemigo.GetComponent<Ruta>().ReferenceMMPath = enemigo_data.Ruta;
+        enemigo.transform.localPosition = Vector3.zero;
         Debug.Log("Recibiendo datos de la ola");
     }
 }

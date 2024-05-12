@@ -1,9 +1,8 @@
-using UnityEngine;
 using MoreMountains.Tools;
 public enum EstadosEnemigo{
     FIN_RUTA, MUERTE
 }
-public class EnemigoData: MonoBehaviour{
+public class EnemigoData{
     private int resistencia;
     private float velocidad;
     private int poder;

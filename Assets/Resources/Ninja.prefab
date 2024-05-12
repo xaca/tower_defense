@@ -128,10 +128,9 @@ GameObject:
   - component: {fileID: 114767317845071676}
   - component: {fileID: 114675271368606418}
   - component: {fileID: 6137852379787212272}
-  - component: {fileID: 242806838659951371}
   - component: {fileID: 7485601537633675857}
-  - component: {fileID: 6530830608247329701}
-  - component: {fileID: 1743609231000362067}
+  - component: {fileID: -3212802565966378133}
+  - component: {fileID: 4457125145521948560}
   m_Layer: 13
   m_Name: Ninja
   m_TagString: Player
@@ -459,18 +458,18 @@ MonoBehaviour:
       - {fileID: 6137852379787212272}
     Transitions:
       array:
-      - Decision: {fileID: 242806838659951371}
-        TrueState: Respawn
+      - Decision: {fileID: -3212802565966378133}
+        TrueState: Detenerse
         FalseState: 
-  - StateName: Respawn
+  - StateName: Detenerse
     Actions:
       array:
-      - {fileID: 1743609231000362067}
+      - {fileID: 6137852379787212272}
     Transitions:
       array:
-      - Decision: {fileID: 242806838659951371}
+      - Decision: {fileID: 0}
         TrueState: 
-        FalseState: Moverse
+        FalseState: 
   TimeInThisState: 0
   Target: {fileID: 0}
   _lastKnownTargetPosition: {x: 0, y: 0, z: 0}
@@ -501,19 +500,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   ObstaclesCheckFrequency: 0
---- !u!114 &242806838659951371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561694053617324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a39b8d0f53eea1a488b048766d7afbf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Label: 
 --- !u!114 &7485601537633675857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,7 +521,20 @@ MonoBehaviour:
   LockHandlesOnXAxis: 0
   LockHandlesOnYAxis: 0
   LockHandlesOnZAxis: 0
---- !u!114 &6530830608247329701
+--- !u!114 &-3212802565966378133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561694053617324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39b8d0f53eea1a488b048766d7afbf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: 
+--- !u!114 &4457125145521948560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -549,21 +548,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: 
---- !u!114 &1743609231000362067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561694053617324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17c39ffec6dea164a99566587a3b9022, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationMode: 1
-  Label: 
-  enemigo: {fileID: 0}
 --- !u!1 &1671905898232590
 GameObject:
   m_ObjectHideFlags: 0

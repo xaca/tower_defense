@@ -9,17 +9,18 @@ public class AIDecisionFinPatrulla : AIDecision
 {
     private Ruta ruta;
     public override void Initialization(){
+        
         ruta = GetComponent<Ruta>();
-        if(ruta==null){
+        if(ruta==null)
+        {
             throw new Exception("La ruta no se asigno como componente del Character");
         }
     }
     public override bool Decide(){
         if(ruta.FinRuta())
         {
-            Debug.Log("Fin de la ruta");
-            //MMGameEvent.Trigger(EnemigoEstados.FIN_RUTA);
-            //GameManager.Instance.LoseLife();
+            //Eventos enemigos debe enviar un gameobject para poder modificarlo
+            ManejadorEventos.TriggerEvent(EventosEnemigos.FIN_DE_RUTA,this.gameObject);
         }
         return ruta.FinRuta();
     }
