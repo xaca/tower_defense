@@ -3233,6 +3233,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1231548396}
+  - {fileID: 2019431841}
   m_Father: {fileID: 1786969546}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12186,6 +12187,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 581ea2e7a3383fa4eac2d162354979b5, type: 3}
+--- !u!1 &2019431840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2019431841}
+  - component: {fileID: 2019431842}
+  m_Layer: 0
+  m_Name: Ruta 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2019431841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019431840}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3, y: -17.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 544637630}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2019431842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019431840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81dc1a6e4b189d4bae2faab8a2a1a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CycleOption: 0
+  LoopInitialMovementDirection: 0
+  PathElements:
+  - PathElementPosition: {x: 0, y: 0, z: 0}
+    Delay: 0
+  - PathElementPosition: {x: 0.0000011324883, y: 10.106182, z: 0}
+    Delay: 0
+  - PathElementPosition: {x: -10.444882, y: 10.106182, z: 0}
+    Delay: 0
+  - PathElementPosition: {x: -10.444884, y: 22.371744, z: 0}
+    Delay: 0
+  - PathElementPosition: {x: 9.793287, y: 22.371744, z: 0}
+    Delay: 0
+  - PathElementPosition: {x: 9.793287, y: 9.987315, z: 0}
+    Delay: 0
+  - PathElementPosition: {x: 22.87543, y: 9.987315, z: 0}
+    Delay: 0
+  - PathElementPosition: {x: 22.87543, y: 0.7426014, z: 0}
+    Delay: 0
+  - PathElementPosition: {x: 35.95757, y: 0.7426014, z: 0}
+    Delay: 0
+  ReferenceMMPath: {fileID: 0}
+  AbsoluteReferencePath: 0
+  MinDistanceToGoal: 0.1
+  LockHandlesOnXAxis: 0
+  LockHandlesOnYAxis: 0
+  LockHandlesOnZAxis: 0
 --- !u!4 &2019765081 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4798570233257244, guid: 581ea2e7a3383fa4eac2d162354979b5,
@@ -12653,27 +12725,15 @@ MonoBehaviour:
   datos:
   - tiempoSalida: 0
     tipo: 0
-    cantidad: 7
-    ruta: {fileID: 1231548397}
+    cantidad: 9
+    ruta: {fileID: 2019431842}
   - tiempoSalida: 3
     tipo: 1
-    cantidad: 3
-    ruta: {fileID: 1231548397}
-  - tiempoSalida: 5
-    tipo: 2
-    cantidad: 6
-    ruta: {fileID: 1231548397}
+    cantidad: 12
+    ruta: {fileID: 2019431842}
   - tiempoSalida: 7
-    tipo: 0
-    cantidad: 3
-    ruta: {fileID: 1231548397}
-  - tiempoSalida: 10
-    tipo: 0
-    cantidad: 7
-    ruta: {fileID: 1231548397}
-  - tiempoSalida: 12
-    tipo: 1
-    cantidad: 7
+    tipo: 2
+    cantidad: 5
     ruta: {fileID: 1231548397}
   tiempo_despacho: 0
   tiempo_entre_olas: 5
