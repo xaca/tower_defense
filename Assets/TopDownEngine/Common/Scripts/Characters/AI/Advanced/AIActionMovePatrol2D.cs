@@ -108,6 +108,7 @@ namespace MoreMountains.TopDownEngine
 				return;
 			}
 
+
 			// moves the agent in its current direction
 			CheckForObstacles();
 
@@ -119,6 +120,7 @@ namespace MoreMountains.TopDownEngine
 				DetermineDelay();
 			}
 
+
 			_direction = _mmPath.CurrentPoint() - this.transform.position;
 			_direction = _direction.normalized;
 
@@ -126,6 +128,15 @@ namespace MoreMountains.TopDownEngine
 			_characterMovement.SetVerticalMovement(_direction.y);
 
 			_indexLastFrame = _currentIndex;
+			
+			if(this.transform.gameObject.name == "Koala(Clone)")
+			{
+				Debug.Log("Current index: "+_currentIndex);
+				Debug.Log("Last index: "+_indexLastFrame);
+				Debug.Log( _mmPath.CurrentPoint());
+				Debug.Log("_mmPath.CurrentIndex() "+_mmPath.CurrentIndex());
+				Debug.Log("_mmPath.PathElements.Count "+_mmPath.PathElements.Count);
+			}
 		}
 
 		protected virtual void DetermineDelay()

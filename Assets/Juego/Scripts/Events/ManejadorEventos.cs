@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public enum EventosEnemigos{
-    FIN_DE_RUTA
+    FIN_DE_RUTA, DESACTIVAR, RUTA_ACTUALIZADA
 }
 public enum EventosOla{
     DESPACHAR_ENEMIGO, OLA_TERMINADA, FIN_OLEADAS
@@ -13,7 +13,7 @@ public class ManejadorEventos : MonoBehaviour
 {
     public delegate void OlaAction(EnemigoData data);
     private static event OlaAction eventos_ola;
-    public delegate void EnemigoAction(GameObject go);
+    public delegate void EnemigoAction(EventosEnemigos e,GameObject go);
     private static event EnemigoAction eventos_enemigos;
     public delegate void OlaMessage(EventosOla evt);
     private static event OlaMessage eventos_mensajes;
@@ -32,11 +32,7 @@ public class ManejadorEventos : MonoBehaviour
     }
     public static void TriggerEvent(EventosEnemigos e, GameObject go)
     {
-        if(e == EventosEnemigos.FIN_DE_RUTA)
-        {
-            eventos_enemigos?.Invoke(go);
-        }
-        
+        eventos_enemigos?.Invoke(e,go);
     }
     
     public static void AddEventListener(OlaAction listener)

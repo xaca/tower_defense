@@ -5,6 +5,7 @@ using UnityEngine;
 public class Oleadas : MonoBehaviour, IOlaMessageEvent
 {
     private int indice_ola;
+    
     void Start()
     {
         ReproducirOla();
@@ -12,12 +13,14 @@ public class Oleadas : MonoBehaviour, IOlaMessageEvent
 
     public void ReproducirOla(){
         GameObject ola;
-        
+        Ola temp;
+
         if(indice_ola<this.transform.childCount)
         {
             ola = this.transform.GetChild(indice_ola).gameObject;
             if(ola!=null){
-                ola.GetComponent<Ola>().EmpezarOla();
+                temp = ola.GetComponent<Ola>();
+                temp.EmpezarOla();
                 indice_ola++;
             }
         }

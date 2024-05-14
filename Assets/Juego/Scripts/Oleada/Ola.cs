@@ -25,6 +25,7 @@ public class Ola : MonoBehaviour
     [Tooltip("Tiempo de espera entre olas")]
     [SerializeField]
     private float tiempo_entre_olas;
+
     public void EmpezarOla(){
         tiempo_entre_olas = tiempo_entre_olas>0?tiempo_entre_olas:5;
         tiempo_despacho = tiempo_despacho>0?tiempo_despacho:2;
@@ -80,10 +81,15 @@ public class Ola : MonoBehaviour
         }
         else{
             //Se despacharon todos los grupos de la ola,
-            //Se pide la siguiente ola
+            //Se pide la siguiente ola, se espera el tiempo entre olas
             //if(Time.timeSinceLevelLoad>(tiempo_total_ola+tiempo_entre_olas)){}
-            ManejadorEventos.TriggerEvent(EventosOla.OLA_TERMINADA,null);
+            StartCoroutine(FinDeOla());
         }
+    }
+
+    IEnumerator FinDeOla(){
+        yield return new WaitForSeconds(tiempo_entre_olas);
+        ManejadorEventos.TriggerEvent(EventosOla.OLA_TERMINADA,null);
     }
 
     /*Se pide al pooling que despache los enemigos de la ola actual

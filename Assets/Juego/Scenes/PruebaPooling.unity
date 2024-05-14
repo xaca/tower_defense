@@ -6526,7 +6526,7 @@ MonoBehaviour:
     cantidad: 8
     ruta: {fileID: 1231548397}
   tiempo_despacho: 0
-  tiempo_entre_olas: 5
+  tiempo_entre_olas: 10
 --- !u!4 &1056612551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4798570233257244, guid: 581ea2e7a3383fa4eac2d162354979b5,
@@ -7275,7 +7275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b81dc1a6e4b189d4bae2faab8a2a1a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CycleOption: 0
+  CycleOption: 2
   LoopInitialMovementDirection: 0
   PathElements:
   - PathElementPosition: {x: -26.84, y: 0, z: 0}
@@ -8366,6 +8366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224419649234339082, guid: b6993e89d9af3f64182a41c77cf345c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.999939
       objectReference: {fileID: 0}
     - target: {fileID: 224428629580308236, guid: b6993e89d9af3f64182a41c77cf345c2,
         type: 3}
@@ -12291,7 +12296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b81dc1a6e4b189d4bae2faab8a2a1a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CycleOption: 0
+  CycleOption: 2
   LoopInitialMovementDirection: 0
   PathElements:
   - PathElementPosition: {x: 0, y: 0, z: 0}
@@ -12796,7 +12801,7 @@ MonoBehaviour:
     cantidad: 5
     ruta: {fileID: 1231548397}
   tiempo_despacho: 0
-  tiempo_entre_olas: 5
+  tiempo_entre_olas: 10
 --- !u!4 &2131483204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4798570233257244, guid: 581ea2e7a3383fa4eac2d162354979b5,

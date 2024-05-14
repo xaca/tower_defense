@@ -19,9 +19,14 @@ public class AIDecisionFinPatrulla : AIDecision
     public override bool Decide(){
         if(ruta.FinRuta())
         {
-            //Eventos enemigos debe enviar un gameobject para poder modificarlo
             ManejadorEventos.TriggerEvent(EventosEnemigos.FIN_DE_RUTA,this.gameObject);
+            StartCoroutine(DesactivarEnemigo());
         }
         return ruta.FinRuta();
+    }
+
+    public IEnumerator DesactivarEnemigo(){
+        yield return new WaitForSeconds(1f);
+        ManejadorEventos.TriggerEvent(EventosEnemigos.DESACTIVAR,this.gameObject);
     }
 }

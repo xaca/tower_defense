@@ -124,13 +124,14 @@ GameObject:
   - component: {fileID: 114436691134650644}
   - component: {fileID: 114809083901408364}
   - component: {fileID: 114637059735928924}
-  - component: {fileID: 114120590962362520}
   - component: {fileID: 114767317845071676}
   - component: {fileID: 114675271368606418}
   - component: {fileID: 6137852379787212272}
   - component: {fileID: 7485601537633675857}
   - component: {fileID: -3212802565966378133}
-  - component: {fileID: 4457125145521948560}
+  - component: {fileID: 3606431991643730040}
+  - component: {fileID: -4713557655496976662}
+  - component: {fileID: 4960804299100522974}
   m_Layer: 13
   m_Name: Ninja
   m_TagString: Player
@@ -371,28 +372,6 @@ MonoBehaviour:
   RunSpeed: 16
   AutoRun: 0
   AutoRunThreshold: 0.6
---- !u!114 &114120590962362520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561694053617324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8c17a9a9fed854daff1f08f315ad69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  FallingFeedback: {fileID: 0}
 --- !u!114 &114767317845071676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,11 +443,11 @@ MonoBehaviour:
   - StateName: Detenerse
     Actions:
       array:
-      - {fileID: 6137852379787212272}
+      - {fileID: 3606431991643730040}
     Transitions:
       array:
-      - Decision: {fileID: 0}
-        TrueState: 
+      - Decision: {fileID: -4713557655496976662}
+        TrueState: Moverse
         FalseState: 
   TimeInThisState: 0
   Target: {fileID: 0}
@@ -534,7 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
---- !u!114 &4457125145521948560
+--- !u!114 &3606431991643730040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -548,6 +527,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: 
+--- !u!114 &-4713557655496976662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561694053617324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c065483f9b7a58b49ab9712b220707c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: 
+--- !u!114 &4960804299100522974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561694053617324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a673056e18ebe048b95497cc830d294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: 
+  ChangeDirectionOnObstacle: 1
+  ObstaclesLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  ObstaclesCheckFrequency: 1
 --- !u!1 &1671905898232590
 GameObject:
   m_ObjectHideFlags: 0

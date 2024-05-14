@@ -15890,7 +15890,8 @@ GameObject:
   - component: {fileID: -4270486782831739765}
   - component: {fileID: -3211044398776491499}
   - component: {fileID: -4508922709955678019}
-  - component: {fileID: 8245178416865228479}
+  - component: {fileID: 4607378564344334283}
+  - component: {fileID: 9098840812579934786}
   m_Layer: 13
   m_Name: GrasslandsHornsBlue
   m_TagString: Player
@@ -16240,8 +16241,8 @@ MonoBehaviour:
       - {fileID: -3211044398776491499}
     Transitions:
       array:
-      - Decision: {fileID: -4508922709955678019}
-        TrueState: 
+      - Decision: {fileID: 9098840812579934786}
+        TrueState: Moverse
         FalseState: 
   TimeInThisState: 0
   Target: {fileID: 0}
@@ -16307,7 +16308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
---- !u!114 &8245178416865228479
+--- !u!114 &4607378564344334283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16320,6 +16321,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitializationMode: 0
+  Label: 
+--- !u!114 &9098840812579934786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6311937572946013165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c065483f9b7a58b49ab9712b220707c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   Label: 
 --- !u!1 &6311937572966241791
 GameObject:

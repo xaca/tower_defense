@@ -110,25 +110,30 @@ public class PoolingEnemigos : MonoBehaviour,IOLaDataEvent,IEnemigoEvent
         ManejadorEventos.RemoveEventListener(OnEnemigoAction);
     }
 
-    public void OnEnemigoAction(GameObject go)
+    public void OnEnemigoAction(EventosEnemigos e,GameObject go)
     {
-        //Se recibe el evento de fin de ruta
-        //Se desactiva el enemigo
-        go.transform.localPosition = Vector3.zero;
-        go.GetComponent<Ruta>().Initialization();
-        go.SetActive(false);
-        Debug.Log("Fin de ruta");
+        if(e == EventosEnemigos.FIN_DE_RUTA)
+        {            
+            //Se ubican por fuera del escenario
+            go.transform.localPosition = new Vector3(-54,0,0);
+        }
+
+        if(e == EventosEnemigos.DESACTIVAR)
+        {
+            go.SetActive(false);
+        }
     }
 
     public void OnOlaData(EnemigoData enemigo_data)
     {
-        //Se recibe la información de la ola
-        //Se guarda en la lista de datos
-        GameObject enemigo = ObtenerEnemigo(enemigo_data);
+        Ruta ruta;
         
+        GameObject enemigo = ObtenerEnemigo(enemigo_data);
+        ruta = enemigo.GetComponent<Ruta>();
+        ruta.CambiarRuta(enemigo_data.Ruta);
+        ruta.ReiniciarRuta();
         enemigo.SetActive(true);
-        enemigo.transform.localPosition = Vector3.zero;
-        enemigo.GetComponent<Ruta>().ReferenceMMPath = enemigo_data.Ruta;
-        Debug.Log("Recibiendo datos de la ola");
+        ManejadorEventos.TriggerEvent(EventosEnemigos.RUTA_ACTUALIZADA,enemigo);
+        //enemigo.transform.localPosition = ruta.InicioRuta();
     }
 }

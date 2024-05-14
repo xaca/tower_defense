@@ -1,7 +1,7 @@
 using UnityEngine;
 interface IEnemigoEvent
 {
-    public void OnEnemigoAction(GameObject go);
+    public void OnEnemigoAction(EventosEnemigos e,GameObject go);
 
     public void OnEnable();
 

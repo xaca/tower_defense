@@ -9817,13 +9817,13 @@ GameObject:
   - component: {fileID: 114184457958384624}
   - component: {fileID: -7392971012591918491}
   - component: {fileID: 114079283237680582}
-  - component: {fileID: 114530058247276760}
   - component: {fileID: 114171358364461030}
   - component: {fileID: 5138030191358202673}
   - component: {fileID: 9157843362100592090}
   - component: {fileID: -8937263884261673955}
   - component: {fileID: 2914089244751141027}
-  - component: {fileID: 1852504271534029764}
+  - component: {fileID: 1353582199525435634}
+  - component: {fileID: 4525593860430805285}
   m_Layer: 13
   m_Name: Koala
   m_TagString: Player
@@ -10058,28 +10058,6 @@ MonoBehaviour:
   RunSpeed: 16
   AutoRun: 0
   AutoRunThreshold: 0.6
---- !u!114 &114530058247276760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498750440386690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8c17a9a9fed854daff1f08f315ad69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  FallingFeedback: {fileID: 4241640356283784650}
 --- !u!114 &114171358364461030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10151,11 +10129,11 @@ MonoBehaviour:
   - StateName: Detenerse
     Actions:
       array:
-      - {fileID: 9157843362100592090}
+      - {fileID: 1353582199525435634}
     Transitions:
       array:
-      - Decision: {fileID: 0}
-        TrueState: 
+      - Decision: {fileID: 4525593860430805285}
+        TrueState: Moverse
         FalseState: 
   TimeInThisState: 0
   Target: {fileID: 0}
@@ -10221,7 +10199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
---- !u!114 &1852504271534029764
+--- !u!114 &1353582199525435634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10234,6 +10212,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitializationMode: 0
+  Label: 
+--- !u!114 &4525593860430805285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498750440386690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c065483f9b7a58b49ab9712b220707c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   Label: 
 --- !u!1 &1561075265052736
 GameObject:
